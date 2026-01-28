@@ -1,5 +1,14 @@
 # Analytics 2 dashboard frontend
 
+## _todo_
+- [ ] *aggiungi placeholder commenti AI*
+- [ ] *fix mobile view*
+
+## _in progress_
+- [ ] *aggiungi sezione metri*
+- [ ] *aggiungi sezione pezzi*
+- [ ] *aggiungi selezione time frame*
+
 ## Direzione generale
 - Tailwind + “light components” + BEM
 - Tailwind per layout (grid/flex), spacing, typography, responsive
