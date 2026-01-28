@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dist/style.css" />
+    <title>Analytics 2</title>
+  </head>
+  <body
+    class="min-h-screen bg-[var(--grey-50)] p-6 font-sans text-[var(--grey-1000)]"
+  >
+    <main class="mx-auto w-full max-w-5xl">
+      <div class="dashboard-controls">
+        <div class="bar-color-controls">
+          <button
+            class="bar-color-button"
+            type="button"
+            aria-label="Seleziona colore barre"
+            data-role="bar-color-button"
+          ></button>
+          <button
+            class="bar-color-button"
+            type="button"
+            aria-label="Seleziona colore barre efficienza"
+            data-role="efficiency-bar-color-button"
+          ></button>
+          <input
+            class="bar-color-input"
+            type="color"
+            value="#f0abfc"
+            aria-label="Colore barre"
+            data-role="bar-color-input"
+          />
+          <input
+            class="bar-color-input"
+            type="color"
+            value="#fde68a"
+            aria-label="Colore barre efficienza"
+            data-role="efficiency-bar-color-input"
+          />
+        </div>
+        <button
+          class="timeframe-select"
+          type="button"
+          aria-label="Time frame: ultimi 5 giorni"
+          data-role="timeframe"
+        >
+          ultimi 5 giorni
+        </button>
+      </div>
+      <section class="markers-panel" data-component="markers-panel">
+        <header class="markers-panel__header">
+          <nav class="operator-tabs" aria-label="Operatore">
+            <button
+              class="operator-tabs__tab operator-tabs__tab--active"
+              type="button"
+              data-operator="all"
+              aria-selected="true"
+            >
+              tutti
+            </button>
+            <button
+              class="operator-tabs__tab"
+              type="button"
+              data-operator="juan-pedro"
+              aria-selected="false"
+            >
+              juan pedro
+            </button>
+            <button
+              class="operator-tabs__tab"
+              type="button"
+              data-operator="juan-franco"
+              aria-selected="false"
+            >
+              juan franco
+            </button>
+          </nav>
+        </header>
+
+        <div class="markers-panel__body">
+          <section class="markers-panel__section" aria-label="Produzione">
+            <div class="markers-panel__chart">
+              <canvas
+                data-role="markers-chart"
+                aria-label="Markers per giorno"
+              ></canvas>
+              <div
+                class="avgline-tooltip"
+                data-role="avgline-tooltip"
+                aria-hidden="true"
+              ></div>
+            </div>
+
+            <aside class="markers-panel__kpis">
+              <div class="kpi-card">
+                <div class="kpi-card__label">markers tagliati</div>
+                <div class="kpi-card__value">
+                  <span data-role="kpi-total">60</span>
+                  <span
+                    class="kpi-trend kpi-trend--up"
+                    title="vs periodo precedente"
+                    aria-label="In aumento vs periodo precedente"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 -960 960 960"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M440-608 324-492q-11 11-28 11t-28-11q-11-11-11-28t11-28l184-184q12-12 28-12t28 12l184 184q11 11 11 28t-11 28q-11 11-28 11t-28-11L520-608v328q0 17-11.5 28.5T480-240q-17 0-28.5-11.5T440-280v-328Z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-card__label">
+                  --- media markers tagliati al giorno
+                </div>
+                <div class="kpi-card__value">
+                  <span data-role="kpi-avg">12</span>
+                  <span
+                    class="kpi-trend kpi-trend--equal"
+                    title="vs periodo precedente"
+                    aria-label="Stabile vs periodo precedente"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 -960 960 960"
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M160-280v-120h640v120H160Zm0-280v-120h640v120H160Z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </aside>
+          </section>
+
+          <div
+            class="markers-panel__divider"
+            role="separator"
+            aria-hidden="true"
+          ></div>
+
+          <section class="markers-panel__section" aria-label="Teli">
+            <div class="markers-panel__chart">
+              <canvas
+                data-role="teli-chart"
+                aria-label="Teli per giorno"
+              ></canvas>
+              <div
+                class="avgline-tooltip"
+                data-role="avgline-tooltip"
+                aria-hidden="true"
+              ></div>
+            </div>
+
+            <aside class="markers-panel__kpis">
+              <div class="kpi-card">
+                <div class="kpi-card__label">teli tagliati</div>
+                <div class="kpi-card__value">
+                  <span data-role="kpi-teli-total">6.600</span>
+                  <span
+                    class="kpi-trend kpi-trend--up"
+                    title="vs periodo precedente"
+                    aria-label="In aumento vs periodo precedente"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 -960 960 960"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M440-608 324-492q-11 11-28 11t-28-11q-11-11-11-28t11-28l184-184q12-12 28-12t28 12l184 184q11 11 11 28t-11 28q-11 11-28 11t-28-11L520-608v328q0 17-11.5 28.5T480-240q-17 0-28.5-11.5T440-280v-328Z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-card__label">
+                  --- media teli tagliati al giorno
+                </div>
+                <div class="kpi-card__value">
+                  <span data-role="kpi-teli-avg">1.320</span>
+                  <span
+                    class="kpi-trend kpi-trend--equal"
+                    title="vs periodo precedente"
+                    aria-label="Stabile vs periodo precedente"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 -960 960 960"
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M160-280v-120h640v120H160Zm0-280v-120h640v120H160Z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </aside>
+          </section>
+
+          <div
+            class="markers-panel__divider"
+            role="separator"
+            aria-hidden="true"
+          ></div>
+
+          <section class="markers-panel__section" aria-label="Efficienza">
+            <div class="markers-panel__chart">
+              <canvas
+                data-role="efficiency-chart"
+                aria-label="Efficienza per giorno"
+              ></canvas>
+              <div
+                class="avgline-tooltip"
+                data-role="avgline-tooltip"
+                aria-hidden="true"
+              ></div>
+            </div>
+
+            <aside class="markers-panel__kpis">
+              <div class="kpi-card">
+                <div class="kpi-card__label">--- efficienza media</div>
+                <div class="kpi-card__value">
+                  <span data-role="kpi-efficiency">70%</span>
+                  <span
+                    class="kpi-trend kpi-trend--equal"
+                    title="vs periodo precedente"
+                    aria-label="Stabile vs periodo precedente"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 -960 960 960"
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M160-280v-120h640v120H160Zm0-280v-120h640v120H160Z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+
+              <div class="eff-steps" aria-label="Perdita di efficienza">
+                <div class="eff-steps__header">
+                  <div class="eff-steps__title">ore lavorabili</div>
+                  <div class="eff-steps__rule" aria-hidden="true"></div>
+                </div>
+
+                <div class="eff-steps__rows">
+                  <div
+                    class="eff-steps__row"
+                    style="--total: 100%; --goodFlex: 90; --lossFlex: 10"
+                  >
+                    <div class="eff-steps__labels">
+                      <div class="eff-steps__label-left">
+                        <span class="eff-steps__pct">90%</span>
+                        <span class="eff-steps__label">accesa</span>
+                      </div>
+                      <div class="eff-steps__label-right">
+                        <span class="eff-steps__label">spenta</span>
+                        <span class="eff-steps__pct">10%</span>
+                      </div>
+                    </div>
+                    <div class="eff-steps__bar" aria-hidden="true">
+                      <span class="eff-steps__seg eff-steps__seg--good"></span>
+                      <span class="eff-steps__seg eff-steps__seg--gap"></span>
+                      <span class="eff-steps__seg eff-steps__seg--loss"></span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="eff-steps__row"
+                    style="--total: 90%; --goodFlex: 90; --lossFlex: 10"
+                  >
+                    <div class="eff-steps__labels">
+                      <div class="eff-steps__label-left">
+                        <span class="eff-steps__pct">80%</span>
+                        <span class="eff-steps__label">lavora</span>
+                      </div>
+                      <div class="eff-steps__label-right">
+                        <span class="eff-steps__label">non lavora</span>
+                        <span class="eff-steps__pct">10%</span>
+                      </div>
+                    </div>
+                    <div class="eff-steps__bar" aria-hidden="true">
+                      <span class="eff-steps__seg eff-steps__seg--good"></span>
+                      <span class="eff-steps__seg eff-steps__seg--gap"></span>
+                      <span class="eff-steps__seg eff-steps__seg--loss"></span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="eff-steps__row"
+                    style="--total: 81%; --goodFlex: 90; --lossFlex: 10"
+                  >
+                    <div class="eff-steps__labels">
+                      <div class="eff-steps__label-left">
+                        <span class="eff-steps__pct">70%</span>
+                        <span class="eff-steps__label">taglia</span>
+                      </div>
+                      <div class="eff-steps__label-right">
+                        <span class="eff-steps__label">non taglia</span>
+                        <span class="eff-steps__pct">10%</span>
+                      </div>
+                    </div>
+                    <div class="eff-steps__bar" aria-hidden="true">
+                      <span class="eff-steps__seg eff-steps__seg--good"></span>
+                      <span class="eff-steps__seg eff-steps__seg--gap"></span>
+                      <span class="eff-steps__seg eff-steps__seg--loss"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>

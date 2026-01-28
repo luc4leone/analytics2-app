@@ -1,0 +1,16 @@
+{
+  "name": "analytics2-dashboard-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "build:css": "tailwindcss -i ./style.css -o ./dist/style.css",
+    "build:css:min": "tailwindcss -i ./style.css -o ./dist/style.css --minify",
+    "dev:css": "tailwindcss -i ./style.css -o ./dist/style.css --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17"
+  }
+}
